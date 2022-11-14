@@ -1,0 +1,21 @@
+
+<% @questions.each_with_index do |question, i| %>
+    <div class="col-md-12 container bg-light">
+        <blockquote class="blockstyle">
+            <span><%= question %></span>
+            <% answer = "" %>
+            <% if question == "I am going to work" %>
+                <% answer = "Great" %>
+            <% elsif question.end_with?("?") %>
+                <% answer = "Silly question, get dressed and go to work!" %>
+            <% else %>
+                <% answer = "I don't care, get dressed and go to work!" %>
+            <% end %>
+            <br>
+            <span><%= answer %></span>
+        </blockquote>
+    </div>
+    <br>
+<% end %>
+
+<a href="/ask" class="btn btn-primary">Ask another question</a>
